@@ -15,19 +15,19 @@ Git is a great version control tool to familiarize yourself with, both for chain
 After following the installation instructions above, you can verify that git is installed using the following command:
 
 ```
-$ git --version
-git version 2.11.1.windows.1
+$ git version
+git version 2.9.0.windows.1
 ```
 
 Once you have git installed, go create an account for yourself on [GitHub](https://github.com/). The IBM Blockchain service on Bluemix currently requires that chaincode be in a GitHub repository in order to be deployed through the REST API.
 
 ## Go
 
-- [Go download page](https://golang.org/dl)
+- [Go 1.6 install](https://golang.org/dl/#go1.6.3)
 - [Go installation instructions](https://golang.org/doc/install)
 - [Go documentation and tutorials](https://golang.org/doc/)
 
-Currently, Go is the only supported language for writing chaincode. The Go installation installs a set of Go CLI tools which are very useful when writing chaincode. For example, the `go build` command allows you to check that your chaincode actually compiles before you attempt to deploy it to a network. At time of writing, this chaincode is known to build successfully with version 1.7.5.
+Currently, Go is the only supported language for writing chaincode. The Go installation installs a set of Go CLI tools which are very useful when writing chaincode. For example, the `go build` command allows you to check that your chaincode actually compiles before you attempt to deploy it to a network. You should install Go 1.6, so that you have the same version of the language that the fabric is written against.
 
 ### Instructions
 
@@ -35,7 +35,7 @@ Follow the installation instructions linked above. You can verify that Go is ins
 
 ```
 $ go version
-go version go1.7.5 windows/amd64
+go version go1.6.3 windows/amd64
 
 $ echo $GOPATH
 C:\gopath
@@ -53,7 +53,7 @@ Any piece of chaincode that you write will need to import the chaincode shim fro
 
 ### Instructions
 
-Three different releases of the fabric are linked above. The release you choose needs to match the Hyperledger network you are deploying your chaincode onto. You will need to make sure that the fabric release you choose is stored under `$GOPATH/src/hyperledger/fabric`.
+Three different releases of the fabric are linked above. The release you choose needs to match the Hyperledger network you are deploying your chaincode onto. You will need to make sure that the fabric release you choose is stored under `$GOPATH/hyperledger/fabric`.
 
 The instructions below should take you through the process of properly installing the v0.5 release on your `GOPATH`.
 
@@ -85,7 +85,7 @@ chaincode_example02.go:27:2: cannot find package "github.com/hyperledger/fabric/
 
 A list of known specific releases is included below:
 
-- [Blockchain service on Bluemix](https://new-console.ng.bluemix.net/catalog/services/blockchain/) - use the v0.6 release
+- [Blockchain service on Bluemix](https://new-console.ng.bluemix.net/catalog/services/blockchain/) - use the v0.5-developer-preview release
 
 ## Postman
 
@@ -105,14 +105,14 @@ Node.js is NOT necessary to develop chaincode, but most of our demos are built o
 
 ### Instructions
 
-Download the latest Node.js LTS installation package and make sure the following commands work on your machine:
+Download the appropriate installation package and make sure the following commands work on your machine:
 
 ```
 $ node -v
-v6.10.1
+v4.4.7
 
 $ npm -v
-3.10.10
+3.10.5
 ```
 
 ## IDE Suggestions
